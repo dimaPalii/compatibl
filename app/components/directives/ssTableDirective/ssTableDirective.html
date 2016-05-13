@@ -1,0 +1,22 @@
+<div class="table-responsive">
+	<table class="table table-striped">
+
+		<thead>
+			<tr>
+				<td>
+					<a href="" ng-click="sortType = 'colorName'; sortReverse = !sortReverse">Color</a>
+				</td>
+				<td>
+					<a href="" ng-click="sortType = 'hexValue'; sortReverse = !sortReverse">Color code</a>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="color in colors | orderBy:sortType:sortReverse ">
+				<td>{{ color.colorName }}</td>
+				<td style="background-color: {{color.hexValue}}">{{color.hexValue}}</td>
+			</tr>
+		</tbody>
+
+	</table>
+</div>
